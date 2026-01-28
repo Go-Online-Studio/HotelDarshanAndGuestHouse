@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Darshan & Guest House | Luxury Stay in Vadodara</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #C5A059;       /* Luxury Gold */
+            --primary-dark: #A68549;
+            --dark: #1A1A1A;          /* Charcoal */
+            --light: #F9F7F2;         /* Off-white */
+            --white: #FFFFFF;
+            --nav-height: 98.61px;
+            --dark-panel: #111111;    /* Deep Black Background */
+            --input-bg: #1a1a1a;      /* Slightly lighter for inputs */
+            --border-color: #333333;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            padding-top: var(--nav-height);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .playfair { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; transition: 0.3s; }
+        img { width: 100%; height: auto; object-fit: cover; }
+        
+        .section-padding { padding: 100px 0; }
+        .bg-white { background-color: var(--white); }
+        .text-primary { color: var(--primary) !important; }
+        .btn-primary { background: var(--primary); border-color: var(--primary); }
+        .btn-primary:hover { background: var(--primary-dark); border-color: var(--primary-dark); }
+
+        /* --- Buttons --- */
+        .btn-gold {
+            background: var(--primary);
+            color: white;
+            border-radius: 0;
+            padding: 12px 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+        }
+        .btn-gold:hover {
+            background-color: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .btn{
+            transition: scale 0.3s ease-in-out,background-color 0.3s ease-in-out,color 0.3s ease-in-out,transform 0.3s ease-in-out;
+        }
+        .btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
+            scale: 0.985;
+        }
+        .btn-check.btn-gold:checked+.btn.btn-gold, .btn.btn-gold.active, .btn.btn-gold.show, .btn.btn-gold:first-child:active, :not(.btn-check.btn-gold)+.btn.btn-gold:active{
+            background-color: var(--primary-dark);
+            color: #fff;
+            border: none;
+        }
+        img{
+            width: 100%;
+        }
+
+        .navbar-brand{
+            width: 84px;
+            padding: 0;
+        }
+        .footer-brand{
+            display: inline-block;
+            width: 80px;
+        }
+
+        /* --- Navbar --- */
+        .navbar {
+            height: var(--nav-height);
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        .nav-link { 
+            color: var(--dark) !important; 
+            font-weight: 500; 
+            text-transform: uppercase; 
+            font-size: 0.85rem; 
+            letter-spacing: 1px;
+        }
+        .nav-link:hover { color: var(--primary) !important; }
+
+        /* --- Hero Section --- */
+       /* --- Hero Section Styles --- */
+#home {
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-slide {
+    /* 1. min-height ensures it looks tall on desktop */
+    min-height: calc(100vh - var(--nav-height) - 70px); 
+    
+    /* 2. height: auto allows it to grow if content is larger than 85vh (mobile fix) */
+    height: auto;     
+    
+    /* 3. Padding ensures text never touches the top/bottom edges */
+    padding: 100px 0; 
+    
+    display: flex;
+    align-items: center; /* Vertically center content */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute; 
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+    z-index: 1;
+}
+
+.hero-content { 
+    position: relative; 
+    z-index: 2; 
+    color: white; 
+    width: 100%;
+}
+
+.hero-title { 
+    font-size: clamp(2rem, 4vw, 4rem); /* Fluid font size */
+    line-height: 1.2; 
+    margin-bottom: 20px; 
+    font-weight: 700;
+}
+.submitBanner{
+    font-size: 12px !important;
+}
+
+        /* --- BOOKING BAR (Floating) --- */
+        .booking-wrapper {
+            margin-top: -60px; /* Pull up to overlap hero */
+            position: relative;
+            z-index: 10;
+            padding: 0 15px;
+        }
+        .booking-bar {
+            background: white;
+            padding: 30px;
+            border-radius: 4px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .form-label-custom {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            color: #888;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .booking-input {
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: 100%;
+            color: var(--dark);
+            border-radius: 0;
+        }
+
+        .swiper-pagination-bullet-active{
+            background-color: var(--primary);
+        }
+        
+        /* --- About Section --- */
+        .about-img-frame {
+            position: relative;
+            border: 1px solid var(--primary);
+        }
+        .about-img-frame img { position: relative; z-index: 1; transform: translate(-20px, -20px); }
+
+        /* --- Room Cards (Reference Style) --- */
+        .room-card {
+            background: white;
+            transition: all 0.4s ease;
+            height: 100%;
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+        }
+        .room-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .room-img-wrap {
+            position: relative;
+            height: 260px;
+            overflow: hidden;
+        }
+        .room-img-wrap img {
+            transition: transform 0.6s;
+        }
+        .room-card:hover .room-img-wrap img { transform: scale(1.1); }
+        
+        /* Price Badge */
+        .price-badge {
+            position: absolute;
+            top: 20px; right: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .room-details { padding: 25px; }
+        .room-icons {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        .room-icons i { color: var(--primary); margin-right: 5px; }
+        
+        .btn-arrow-circle {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex; align-items: center; justify-content: center;
+            transition: 0.3s;
+        }
+        .btn-arrow-circle:hover { background: var(--dark); transform: rotate(-45deg); }
+
+        /* --- Amenities Grid --- */
+        .amenity-box {
+            padding: 30px;
+            background: white;
+            text-align: center;
+            border: 1px solid #eee;
+            transition: 0.3s;
+            height: 100%;
+        }
+        .amenity-box:hover { border-color: var(--primary); }
+        .amenity-icon { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
+
+        /* --- Gallery --- */
+        .gallery-item {
+            display: block;
+            overflow: hidden;
+            border-radius: 4px;
+            height: 250px;
+        }
+        .gallery-item img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: 0.5s;
+        }
+        .gallery-item:hover img { transform: scale(1.1); filter: brightness(0.8); }
+
+        /* --- Testimonials --- */
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            text-align: center;
+            border-bottom: 3px solid var(--primary);
+        }
+        .stars { color: #FFD700; margin-bottom: 15px; }
+
+        /* --- FAQ --- */
+        .accordion-item { border: none; margin-bottom: 10px; background: #f5f5f5; }
+        .accordion-button {
+            background:  var(--light);
+            color: var(--dark);
+            font-weight: 600;
+            box-shadow: none !important;
+            padding: 20px;
+        }
+        .accordion-button:not(.collapsed) {
+            background: var(--primary);
+            color: white;
+        }
+        .accordion-button::after { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23333'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); }
+        .accordion-button:not(.collapsed)::after { filter: invert(1); }
+        
+        /* --- Contact --- */
+        /* Container Tweaks */
+.contact-wrapper {
+    background-color: var(--dark-panel);
+    border-radius: 4px; /* Optional rounded corners */
+}
+
+.contact-panel {
+    background-color: var(--dark-panel);
+    color: white;
+}
+
+/* Icon Styling */
+.icon-box .iconify {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-right: 15px;
+    margin-top: 3px; /* Align with text top */
+}
+textarea{
+    resize: none;
+}
+
+/* Form Inputs (Dark Theme) */
+.form-control-dark {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: #fff;
+    padding: 12px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.form-control-dark:focus {
+    background-color: #222;
+    border-color: var(--primary);
+    color: #fff;
+    box-shadow: none; /* Remove blue glow */
+}
+
+.form-control-dark::placeholder {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+
+
+/* Footer Links Hover Effect */
+.footer-links a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: var(--primary); /* Gold Color */
+    transform: translateX(5px); /* Slide effect */
+}
+
+/* Social Buttons */
+.social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+}
+
+
+/* --- Mobile Tweaks --- */
+@media (max-width: 991px) {
+    .map-panel iframe {
+        min-height: 350px !important;
+    }
+    .contact-panel .p-5 {
+        padding: 2rem !important;
+    }
+    .booking-bar { padding: 20px; }
+    .booking-wrapper { margin-top: 0; background: var(--dark); padding:16px; }
+    .hero-slide { min-height: 60vh; }
+}
+
+@media (max-width: 767.98px) { 
+    .section-padding { padding: 70px 0; }
+
+    footer {
+        text-align: center;
+    }
+    .addresLi{
+        max-width: 254px;
+    }
+}
+
+@media (max-width: 575.98px) { 
+    .section-padding { padding: 50px 0; }
+    .display-5 {
+    font-size: 26px;
+}
+.h5, h5{
+    font-size: 18px;
+}
+ }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbarContent">
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/BrandLogo.webp" alt="Hotel Darshan & Guest House">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" id="offcanvasNavbar">
+                <div class="offcanvas-header border-bottom">
+                    <h5 class="playfair mb-0">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav ms-auto align-items-lg-center" id="navbarContent">
+                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#roomsNew">Rooms</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#amenities">Amenities</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#galleryNew">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <li class="nav-item ms-lg-3">
+                            <a href="tel:+917016165908" class="btn btn-gold">
+                                <span class="iconify me-2" data-icon="carbon:phone-filled"></span> Call Now
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home">
+    <div class="swiper heroSwiper">
+        <div class="swiper-wrapper">
+            
+            <div class="swiper-slide hero-slide" style="background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070');">
+                <div class="hero-overlay"></div>
+                <div class="container hero-content" data-aos="fade-up">
+                    <h5 class="text-uppercase letter-spacing-2 mb-3 text-primary">Vadodara's Finest</h5>
+                    <h1 class="hero-title playfair">Experience Luxury <br> & Comfort</h1>
+                    <a href="#roomsNew" class="btn btn-outline-light rounded-0 px-4 py-3 mt-3">View Rooms</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide hero-slide" style="background-image: url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=2070');">
+                <div class="hero-overlay"></div>
+                <div class="container hero-content">
+                    <h5 class="text-uppercase letter-spacing-2 mb-3 text-primary">Feel At Home</h5>
+                    <h1 class="hero-title playfair">Your Perfect <br> Getaway Awaits</h1>
+                    <a href="#contact" class="btn btn-outline-light rounded-0 px-4 py-3 mt-3">Contact Us</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+
+    <div class="booking-wrapper">
+        <div class="container g-0">
+            <form id="quickBookForm" class="booking-bar">
+                <div class="row g-3 align-items-end">
+                    <div class="col-lg-3 col-md-6">
+                        <label class="form-label-custom">Check In</label>
+                        <input type="date" class="booking-input" id="checkIn" required>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <label class="form-label-custom">Check Out</label>
+                        <input type="date" class="booking-input" id="checkOut" required>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <label class="form-label-custom">Adults</label>
+                        <select class="booking-input" id="adults">
+                            <option value="1">1 Adult</option>
+                            <option value="2" selected>2 Adults</option>
+                            <option value="3">3 Adults</option>
+                            <option value="4+">4+ Adults</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <label class="form-label-custom">Kids</label>
+                        <select class="booking-input" id="children">
+                            <option value="0">0 Kids</option>
+                            <option value="1">1 Kid</option>
+                            <option value="2">2 Kids</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-2">
+                        <button type="submit" class="btn btn-gold submitBanner w-100 py-2 px-3" style="height: 46px;">Check Availability</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row align-items-center g-md-5 g-3">
+                <div class="col-lg-6 ps-4" data-aos="fade-right">
+                    <div class="about-img-frame">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070" class="img-fluid" alt="Hotel Interior">
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h5 class="text-primary text-uppercase mb-3">About Hotel Darshan</h5>
+                    <h2 class="display-5 mb-4 playfair">A Legacy of Hospitality</h2>
+                    <p class="text-secondary mb-4">Located near ITM University on the Halol Highway, Hotel Darshan & Guest House is a premier destination for travelers seeking comfort, luxury, and convenience. Since 2019, we have been redefining the guest experience with our modern amenities and personalized service.</p>
+                    
+                    <div class="row g-4 mb-4">
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <span class="iconify fs-1 text-primary me-3" data-icon="mdi:shield-check"></span>
+                                <div>
+                                    <h5 class="mb-0 playfair">Safe & Secure</h5>
+                                    <small class="text-muted">24/7 CCTV & Security</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <span class="iconify fs-1 text-primary me-3" data-icon="mdi:silverware-fork-knife"></span>
+                                <div>
+                                    <h5 class="mb-0 playfair">Pure Veg</h5>
+                                    <small class="text-muted">In-house Restaurant</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-dark rounded-0 px-4 py-2">Know More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="roomsNew" class="section-padding bg-white">
+    <div class="container">
+        
+        <div class="d-flex justify-content-between align-items-end mb-5" data-aos="fade-up">
+            <div>
+                <h5 class="text-primary text-uppercase">Accommodation</h5>
+                <h2 class="display-4 playfair">Our Luxury Rooms</h2>
+            </div>
+            <div class=" gap-2 d-none d-lg-flex">
+                <div class="swiper-button-custom swiper-button-prev-room btn-arrow-circle" style="transform: rotate(180deg); cursor: pointer;">
+                    <span class="iconify" data-icon="mdi:arrow-right"></span>
+                </div>
+                <div class="swiper-button-custom swiper-button-next-room btn-arrow-circle" style="cursor: pointer;">
+                    <span class="iconify" data-icon="mdi:arrow-right"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper roomSwiper">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <div class="room-card h-100">
+                        <div class="price-badge">₹1,500 / Night</div>
+                        <div class="room-img-wrap">
+                            <a href="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=2070" data-fancybox="rooms">
+                                <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=800" alt="Deluxe Room">
+                            </a>
+                        </div>
+                        <div class="room-details">
+                            <h3 class="h4 playfair">Deluxe AC Room</h3>
+                            <div class="room-icons">
+                                <span><i class="iconify" data-icon="mdi:bed-king"></i> 1 Bed</span>
+                                <span><i class="iconify" data-icon="mdi:account-group"></i> 2 Guests</span>
+                            </div>
+                            <p class="text-muted small">Comfortable AC room with modern amenities, perfect for couples.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                <a href="#" class="text-uppercase text-dark fw-bold small book-room-btn" data-room="Deluxe AC Room">Book Now</a>
+                                <a href="#" class="btn-arrow-circle book-room-btn" data-room="Deluxe AC Room">
+                                    <span class="iconify" data-icon="mdi:arrow-right"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="room-card h-100">
+                        <div class="price-badge">₹2,200 / Night</div>
+                        <div class="room-img-wrap">
+                            <a href="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=2070" data-fancybox="rooms">
+                                <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=800" alt="Executive Suite">
+                            </a>
+                        </div>
+                        <div class="room-details">
+                            <h3 class="h4 playfair">Executive Suite</h3>
+                            <div class="room-icons">
+                                <span><i class="iconify" data-icon="mdi:bed-king"></i> 1 King</span>
+                                <span><i class="iconify" data-icon="mdi:account-group"></i> 3 Guests</span>
+                            </div>
+                            <p class="text-muted small">Spacious suite with sitting area, work desk, and premium furnishings.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                <a href="#" class="text-uppercase text-dark fw-bold small book-room-btn" data-room="Executive Suite">Book Now</a>
+                                <a href="#" class="btn-arrow-circle book-room-btn" data-room="Executive Suite">
+                                    <span class="iconify" data-icon="mdi:arrow-right"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="room-card h-100">
+                        <div class="price-badge">₹2,800 / Night</div>
+                        <div class="room-img-wrap">
+                            <a href="https://images.unsplash.com/photo-1566665797739-1674de7a421a?q=80&w=2070" data-fancybox="rooms">
+                                <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?q=80&w=800" alt="Family Room">
+                            </a>
+                        </div>
+                        <div class="room-details">
+                            <h3 class="h4 playfair">Family Room</h3>
+                            <div class="room-icons">
+                                <span><i class="iconify" data-icon="mdi:bed-double"></i> 2 Beds</span>
+                                <span><i class="iconify" data-icon="mdi:account-group"></i> 4 Guests</span>
+                            </div>
+                            <p class="text-muted small">Large room designed for families, featuring two double beds.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                <a href="#" class="text-uppercase text-dark fw-bold small book-room-btn" data-room="Family Room">Book Now</a>
+                                <a href="#" class="btn-arrow-circle book-room-btn" data-room="Family Room">
+                                    <span class="iconify" data-icon="mdi:arrow-right"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="room-card h-100">
+                        <div class="price-badge">₹2,000 / Night</div>
+                        <div class="room-img-wrap">
+                            <a href="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=2070" data-fancybox="rooms">
+                                <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=800" alt="Corporate Twin">
+                            </a>
+                        </div>
+                        <div class="room-details">
+                            <h3 class="h4 playfair">Corporate Twin</h3>
+                            <div class="room-icons">
+                                <span><i class="iconify" data-icon="mdi:bed-single"></i> 2 Singles</span>
+                                <span><i class="iconify" data-icon="mdi:account-group"></i> 2 Guests</span>
+                            </div>
+                            <p class="text-muted small">Separate beds, ideal for business colleagues or friends.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                <a href="#" class="text-uppercase text-dark fw-bold small book-room-btn" data-room="Corporate Twin">Book Now</a>
+                                <a href="#" class="btn-arrow-circle book-room-btn" data-room="Corporate Twin">
+                                    <span class="iconify" data-icon="mdi:arrow-right"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="room-card h-100">
+                        <div class="price-badge">₹3,500 / Night</div>
+                        <div class="room-img-wrap">
+                            <a href="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=2070" data-fancybox="rooms">
+                                <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=800" alt="Premium Suite">
+                            </a>
+                        </div>
+                        <div class="room-details">
+                            <h3 class="h4 playfair">Premium Suite</h3>
+                            <div class="room-icons">
+                                <span><i class="iconify" data-icon="mdi:crown"></i> 1 King</span>
+                                <span><i class="iconify" data-icon="mdi:hot-tub"></i> Bathtub</span>
+                            </div>
+                            <p class="text-muted small">Our finest room with luxury bath amenities and city view.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                <a href="#" class="text-uppercase text-dark fw-bold small book-room-btn" data-room="Premium Suite">Book Now</a>
+                                <a href="#" class="btn-arrow-circle book-room-btn" data-room="Premium Suite">
+                                    <span class="iconify" data-icon="mdi:arrow-right"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="swiper-slide">
+                    <div class="room-card h-100">
+                        <div class="price-badge">₹1,200 / Night</div>
+                        <div class="room-img-wrap">
+                            <a href="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=2070" data-fancybox="rooms">
+                                <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=800" alt="Standard Room">
+                            </a>
+                        </div>
+                        <div class="room-details">
+                            <h3 class="h4 playfair">Standard Room</h3>
+                            <div class="room-icons">
+                                <span><i class="iconify" data-icon="mdi:bed-queen"></i> 1 Queen</span>
+                                <span><i class="iconify" data-icon="mdi:fan"></i> Non-AC</span>
+                            </div>
+                            <p class="text-muted small">Budget-friendly option with all essential amenities and hygiene.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                <a href="#" class="text-uppercase text-dark fw-bold small book-room-btn" data-room="Standard Room">Book Now</a>
+                                <a href="#" class="btn-arrow-circle book-room-btn" data-room="Standard Room">
+                                    <span class="iconify" data-icon="mdi:arrow-right"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="swiper-pagination position-relative mt-5"></div>
+        </div>
+    </div>
+</section>
+
+    <section id="amenities" class="section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 mb-4 mb-lg-0" data-aos="fade-right">
+                    <h5 class="text-primary text-uppercase">Facilities</h5>
+                    <h2 class="display-5 playfair mb-4">We Have Everything You Need</h2>
+                    <p class="text-muted mb-4">From high-speed internet to 24-hour room service, we ensure your stay is hassle-free and comfortable.</p>
+                    <a href="#contact" class="btn btn-gold">Contact Reception</a>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row g-3">
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                            <div class="amenity-box">
+                                <span class="iconify amenity-icon" data-icon="mdi:wifi"></span>
+                                <h5 class="playfair">Free Wifi</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="amenity-box">
+                                <span class="iconify amenity-icon" data-icon="mdi:parking"></span>
+                                <h5 class="playfair">Free Parking</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="amenity-box">
+                                <span class="iconify amenity-icon" data-icon="mdi:room-service"></span>
+                                <h5 class="playfair">Room Service</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                            <div class="amenity-box">
+                                <span class="iconify amenity-icon" data-icon="mdi:snowflake"></span>
+                                <h5 class="playfair">Air Conditioned</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="amenity-box">
+                                <span class="iconify amenity-icon" data-icon="mdi:television"></span>
+                                <h5 class="playfair">Smart TV</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="amenity-box">
+                                <span class="iconify amenity-icon" data-icon="mdi:hot-tub"></span>
+                                <h5 class="playfair">Hot Water</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galleryNew" class="section-padding bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h5 class="text-primary text-uppercase">Photo Gallery</h5>
+                <h2 class="display-5 playfair">A Glimpse of Elegance</h2>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-8" data-aos="zoom-in">
+                    <a href="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070" class="gallery-item" data-fancybox="gallery" data-caption="Main Lobby">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=800" alt="Lobby">
+                    </a>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <a href="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?q=80&w=2070" class="gallery-item" data-fancybox="gallery" data-caption="Comfortable Beds">
+                        <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?q=80&w=800" alt="Room">
+                    </a>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <a href="https://images.unsplash.com/photo-1735146071436-4ceb5f8c2866?q=80&w=2070" class="gallery-item" data-fancybox="gallery" data-caption="Dining Area">
+                        <img src="https://images.unsplash.com/photo-1735146071436-4ceb5f8c2866?q=80&w=800" alt="Dining">
+                    </a>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+                    <a href="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070" class="gallery-item" data-fancybox="gallery" data-caption="Reception">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800" alt="Reception">
+                    </a>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+                    <a href="https://images.unsplash.com/photo-1629140727571-9b5c6f6267b4?q=80&w=1920" class="gallery-item" data-fancybox="gallery" data-caption="Exterior Night View">
+                        <img src="https://images.unsplash.com/photo-1629140727571-9b5c6f6267b4?q=80&w=800" alt="Exterior">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background-color: #f4f4f4;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h5 class="text-primary text-uppercase">Testimonials</h5>
+                <h2 class="display-5 playfair">What Guests Say</h2>
+            </div>
+            
+            <div class="swiper testimonialSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <p class="fst-italic text-muted">"Excellent stay near ITM University. The rooms were very clean and the staff was extremely helpful. Highly recommended!"</p>
+                            <h6 class="mt-4 playfair fw-bold">- Rahul Mehta</h6>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <p class="fst-italic text-muted">"The food at their pure veg restaurant is amazing. Great value for money and a very safe place for families."</p>
+                            <h6 class="mt-4 playfair fw-bold">- Priya Singh</h6>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★☆</div>
+                            <p class="fst-italic text-muted">"Nice ambiance and quick service. The quick check-in process was a lifesaver after a long drive."</p>
+                            <h6 class="mt-4 playfair fw-bold">- Amit Patel</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination mt-4"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section-padding bg-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center mb-5">
+                        <h5 class="text-primary text-uppercase">Common Questions</h5>
+                        <h2 class="display-5 playfair">Frequently Asked Questions</h2>
+                    </div>
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">
+                                    What are the check-in and check-out timings?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion" >
+                                <div class="accordion-body">
+                                    Our standard check-in time is 12:00 PM and check-out time is 11:00 AM. Early check-in depends on availability.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Is couples entry allowed?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Please contact our front desk directly regarding our specific policies for couples. Valid ID proof is mandatory for all guests.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Do you have a restaurant on-site?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we have a Pure Veg restaurant serving delicious North Indian and local cuisine.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+    <div class="container">
+        <div class="row g-0 shadow-lg overflow-hidden contact-wrapper">
+            
+            <div class="col-lg-5 contact-panel">
+                <div class="p-md-5 p-3">
+                    <h3 class="playfair text-white mb-4">Contact Info</h3>
+                    
+                    <div class="contact-item d-flex mb-4">
+                        <div class="icon-box">
+                            <span class="iconify" data-icon="carbon:location-filled"></span>
+                        </div>
+                        <div class="text-white-50">
+                            <p class="mb-0 text-white fw-bold">Address</p>
+                            <small><a class="text-white-50" href="https://maps.app.goo.gl/c4FANmUzwLU5YNsj9" target="_blank">Lilora , Ta : Waghodiya, near ITM University, Vadodara, Paldi, Gujarat 391510</a></small>
+                        </div>
+                    </div>
+
+                    <div class="contact-item d-flex mb-4">
+                        <div class="icon-box">
+                            <span class="iconify" data-icon="carbon:phone-filled"></span>
+                        </div>
+                        <div class="text-white-50">
+                            <p class="mb-0 text-white fw-bold">Phone</p>
+                            <a href="tel:+917016165908" class="text-decoration-none text-white-50">+91 70161 65908</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item d-flex mb-5">
+                        <div class="icon-box">
+                            <span class="iconify" data-icon="carbon:email"></span>
+                        </div>
+                        <div class="text-white-50">
+                            <p class="mb-0 text-white fw-bold">Email</p>
+                            <a href="mailto:info@hoteldarshan.com" class="text-decoration-none text-white-50">info@hoteldarshan.com</a>
+                        </div>
+                    </div>
+
+                    <h4 class="playfair text-white mb-4 border-top border-secondary pt-4">Send a Message</h4>
+                    <form id="detailedContactForm" class="needs-validation" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-12">
+                                <input type="text" class="form-control form-control-dark" id="cName" placeholder="Your Name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="tel" class="form-control form-control-dark" id="cPhone" placeholder="Phone Number" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control form-control-dark" id="cEmail" placeholder="Email Address">
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control form-control-dark" id="cMessage" rows="4" placeholder="Write your message here..." required></textarea>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <button type="submit" class="btn btn-gold w-100 py-3 fw-bold">SEND VIA WHATSAPP</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-7 map-panel">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7375.069877554685!2d73.3555953!3d22.4465235!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fd388142f342f%3A0x6d9283cf8c7c43cd!2sHOTEL%20DARSHAN%20%26%20GUEST%20HOUSE!5e0!3m2!1sen!2sin!4v1769601506765!5m2!1sen!2sin" width="100%" height="100%" style="border:0; min-height: 550px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <footer class="bg-dark text-white pt-5 pb-4 border-top border-secondary" style="border-color: rgba(255,255,255,0.1) !important;">
+    <div class="container">
+        <div class="row g-5 justify-content-between">
+            
+            <div class="col-lg-4 col-md-6">
+                <a class="footer-brand bg-light rounded-circle mb-2" href="#">
+                    <img src="images/BrandLogo.webp" alt="Hotel Darshan & Guest House">
+                </a>
+                <p class="text-white-50 mb-4" style="line-height: 1.8;">
+                    Experience the perfect blend of luxury and comfort. Located conveniently near ITM University, we offer premium hospitality for business and leisure travelers in Vadodara.
+                </p>
+                <div class="d-flex gap-3 justify-content-center justify-content-md-start">
+                    <a target="_blank" href="https://www.facebook.com/" class="social-btn">
+                        <span class="iconify" data-icon="mdi:facebook"></span>
+                    </a>
+                    <a target="_blank" href="https://www.instagram.com/hoteldarshan_halol/?hl=en" class="social-btn">
+                        <span class="iconify" data-icon="mdi:instagram"></span>
+                    </a>
+                    <a target="_blank" href="https://x.com/" class="social-btn">
+                        <span class="iconify" data-icon="prime:twitter"></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 1px;">Quick Links</h5>
+                <ul class="list-unstyled footer-links">
+                    <li class="mb-3"><a href="#home">Home</a></li>
+                    <li class="mb-3"><a href="#about">About Us</a></li>
+                    <li class="mb-3"><a href="#roomsNew">Rooms & Suites</a></li>
+                    <li class="mb-3"><a href="#amenities">Amenities</a></li>
+                    <li class="mb-3"><a href="#contact">Contact & Location</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 1px;">Contact Us</h5>
+                
+                <div class="d-flex justify-content-center justify-content-md-start mb-3">
+                    <span class="iconify text-primary mt-1 me-3 fs-5 col-auto" data-icon="carbon:location-filled"></span>
+                    <p class="text-white-50 mb-0 addresLi"><a class="text-white-50 " href="https://maps.app.goo.gl/c4FANmUzwLU5YNsj9" target="_blank">Lilora , Ta : Waghodiya, near ITM University, Vadodara, Paldi, Gujarat 391510</a></p>
+                </div>
+                
+                <div class="d-flex justify-content-center justify-content-md-start mb-3">
+                    <span class="iconify text-primary mt-1 me-3 fs-5 col-auto" data-icon="carbon:phone-filled"></span>
+                    <div>
+                        <a href="tel:+917016165908" class="d-block text-white-50 text-decoration-none mb-1">+91 70161 65908</a>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center justify-content-md-start mb-3">
+                    <span class="iconify text-primary mt-1 me-3 fs-5 col-auto" data-icon="carbon:email"></span>
+                    <a href="mailto:info@hoteldarshan.com" class="text-white-50 text-decoration-none">info@hoteldarshan.com</a>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="my-5" style="border-color: rgba(255,255,255,0.1);">
+
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="text-white-50 mb-0 text-uppercase" style="font-size: 0.85rem;">
+                    &copy; <span id="year"></span> <strong class="text-white">Hotel Darshan & Guest House</strong>. All Rights Reserved.
+                </p>
+            </div>
+            <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                <small class="text-white-50">Designed by <a href="#" class="text-primary text-decoration-none">Shriii Tracking Solution</a></small>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
+    <script>
+        // 1. Initializations
+        AOS.init({ duration: 800, once: true });
+        Fancybox.bind("[data-fancybox]", {});
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 2. Swipers
+        new Swiper(".heroSwiper", {
+            loop: true,
+            effect: "fade",
+            autoplay: { delay: 5000 },
+        });
+
+        new Swiper(".testimonialSwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: { el: ".swiper-pagination", clickable: true },
+            breakpoints: {
+                768: { slidesPerView: 2 },
+                992: { slidesPerView: 3 }
+            }
+        });
+
+        /* --- Initialize Room Swiper --- */
+new Swiper(".roomSwiper", {
+    slidesPerView: 1,      // Mobile: 1 card
+    spaceBetween: 30,      // Space between cards
+    loop: true,            // Infinite loop
+    grabCursor: true,      // Hand cursor on hover
+    
+    // Auto Play (Optional - delete if not needed)
+    autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+    },
+
+    // Navigation Arrows
+    navigation: {
+        nextEl: ".swiper-button-next-room",
+        prevEl: ".swiper-button-prev-room",
+    },
+
+    // Bottom Dots
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+
+    // Responsive Breakpoints
+    breakpoints: {
+        768: {
+            slidesPerView: 2,  // Tablet: 2 cards
+        },
+        992: {
+            slidesPerView: 3,  // Desktop: 3 cards
+        }
+    }
+});
+
+
+
+        // 3. Navbar Scroll Logic
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-sm');
+                nav.style.padding = "10px 0";
+            } else {
+                nav.classList.remove('shadow-sm');
+                nav.style.padding = "20px 0";
+            }
+        });
+
+        // 4. WhatsApp Logic
+/* --- 1. CONFIGURATION & SHARED FUNCTIONS --- */
+const PHONE_NUMBER = "917016165908"; // Hotel Darshan Official Phone
+
+function openWhatsApp(message) {
+    // Detect mobile device
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+    // Choose correct URL scheme (api for app, web for desktop)
+    const baseUrl = isMobile ? "https://api.whatsapp.com/send" : "https://web.whatsapp.com/send";
+    
+    // Build final URL
+    const url = `${baseUrl}?phone=${PHONE_NUMBER}&text=${encodeURIComponent(message)}`;
+    
+    // Open
+    window.open(url, '_blank');
+}
+
+/* --- 2. BOOKING BAR HANDLER (Quick Book) --- */
+const bookingForm = document.getElementById('quickBookForm');
+if (bookingForm) {
+    bookingForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const checkIn = document.getElementById('checkIn').value || "Not Specified";
+        const checkOut = document.getElementById('checkOut').value || "Not Specified";
+        const adults = document.getElementById('adults').value;
+        const kids = document.getElementById('children').value;
+
+        const msg = `*New Booking Inquiry* 🏨\n\n` + 
+                    `📅 Check-In: ${checkIn}\n` + 
+                    `📅 Check-Out: ${checkOut}\n` + 
+                    `👥 Adults: ${adults}\n` + 
+                    `👶 Kids: ${kids}\n\n` + 
+                    `Please confirm availability.`;
+        
+        openWhatsApp(msg);
+        
+        // Clear form after sending
+        bookingForm.reset();
+    });
+}
+
+/* --- 3. ROOM CARD BUTTONS (Specific Room Inquiry) --- */
+document.querySelectorAll('.book-room-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const roomType = this.getAttribute('data-room');
+        const msg = `Hi Hotel Darshan, I am interested in booking the *${roomType}*. Please share details and pricing.`;
+        
+        openWhatsApp(msg);
+    });
+});
+
+/* --- 4. DETAILED CONTACT FORM HANDLER --- */
+const contactForm = document.getElementById('detailedContactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get Values
+        const name = document.getElementById('cName').value.trim();
+        const phone = document.getElementById('cPhone').value.trim();
+        const email = document.getElementById('cEmail').value.trim();
+        const message = document.getElementById('cMessage').value.trim();
+        
+        // Basic Validation
+        if(!name || !phone || !message) {
+            this.classList.add('was-validated');
+            return;
+        }
+        
+        // Construct Message
+        let msg = `*General Inquiry* 📩\n\n`;
+        msg += `👤 *Name:* ${name}\n`;
+        msg += `📞 *Phone:* ${phone}\n`;
+        if(email) msg += `✉️ *Email:* ${email}\n`;
+        msg += `📝 *Message:* ${message}`;
+        
+        openWhatsApp(msg);
+        
+        // Clear form and remove validation styles after sending
+        contactForm.reset();
+        this.classList.remove('was-validated');
+    });
+}
+
+    </script>
+</body>
+</html>
